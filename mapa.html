@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Geoportal - ESCALAR</title>
+
+        <link rel="stylesheet" href="mapa.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-measure/dist/leaflet-measure.css" />
+
+    </head>
+
+    <body>
+        <header>
+			<div class="container-hero">
+				<div class="container hero">
+					<img src="img/logos-removebg-preview.png" alt="">
+				</div>
+			</div>
+            
+            <div class="container-navbar">
+                <h3>Datos Geolocalizados y de Análisis de Forma Dinámica que Muestra las Organizaciones Involucradas en el Proyecto ESCALAR así como las Estadísticas por País.</h3>
+            </div>
+		</header>
+
+        <div id="map">
+            <button id="toggle-leyenda">
+                <img src="img/menu.png" alt="" id="menu">
+            </button>
+
+            <div id="leyenda" class="oculto">
+                <h3>Leyenda</h3>
+
+                <ul>
+                    <li><img src="img/gubernamental.png" alt=""> Organización No Gubernamental</li>
+                    <li><img src="img/centro.png" alt=""> Academia/Centro de Investigación</li>
+                    <li><img src="img/privada.png" alt=""> Empresa Privada</li>
+                </ul>
+            </div>
+
+            <button id="togle-leyend">
+                <img src="img/capas.png" alt="" id="capas">
+            </button>
+
+            <div id="leyend" class="ocult">
+                <h3>Capas del mapa</h3>
+
+                <label><input type="checkbox" id="guber" checked> Organización No Gubernamental</label><br>
+                <label><input type="checkbox" id="priv" checked> Empresa Privada</label><br>
+                <label><input type="checkbox" id="academia" checked> Academia/Centro de Investigación</label>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="https://unpkg.com/leaflet-measure/dist/leaflet-measure.js"></script>
+
+        <script src="mapa.js"></script>
+    </body>
+</html>

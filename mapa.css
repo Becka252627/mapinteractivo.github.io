@@ -1,0 +1,130 @@
+.container-hero {
+	background-color: #92e27a;
+}
+
+.container-navbar{
+  background-color: #71c55b;
+  color: whitesmoke;
+  position: initial;
+  padding: 3px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+img{
+  width: 60%;
+  padding: 25;
+}
+
+#map {
+  height: 90vh;
+  width: 100%;
+  margin: 0 auto;
+  border: 2px solid #2e7d32;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+#toggle-leyenda {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#toggle-leyenda img{
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+#leyenda {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  z-index: 999;
+  background-color: white;
+  border: 2px solid #4caf50;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#leyenda ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#leyenda li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+#leyenda img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.oculto {
+  display: none;
+}
+
+#togle-leyend {
+  position: absolute;
+  top: 20px;
+  right: 85px;
+  z-index: 1000;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#togle-leyend img{
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+#leyend {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  z-index: 999;
+  background-color: white;
+  border: 2px solid #4caf50;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#leyend img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.ocult {
+  display: none;
+}
