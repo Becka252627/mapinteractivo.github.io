@@ -1,4 +1,7 @@
-const mapa = L.map('map').setView([0, 0], 3);
+const mapa = L.map('map', {
+  zoomControl: true,
+  attributionControl: true
+}).setView([13.7, -88.9], 4);
 
 const orgubenamental = L.layerGroup();
 const emprivada = L.layerGroup();
@@ -80,7 +83,7 @@ L.marker([19.044177, -98.197503], {icon: CentroInvestigacion})
     .bindPopup(`<div style="max-width: 300px; text-align: left;">
     <b>CATIE</b><br>Academia/Centro de Investigación</br>
     <h5>   </h5>
-    <img src="img/antonio.png" 
+    <img src="img/catie.jpeg" 
          alt="" 
          style="width: 60%; border-radius: 5px;"/>
     <p>
@@ -101,7 +104,7 @@ L.marker([9.891159, -83.652109], {icon: CentroInvestigacion})
  .bindPopup(`<div style="max-width: 300px; text-align: left;">
     <b>CATIE</b><br>Academia/Centro de Investigación</br>
     <h5>   </h5>
-    <img src="img/william.jpg" 
+    <img src="img/catie.jpeg" 
          alt="" 
          style="width: 60%; border-radius: 5px;"/>
 
@@ -222,12 +225,58 @@ document.getElementById("academia").addEventListener("change", function () {
 });
 
 
-L.control.measure({
-  primaryLengthUnit: 'kilometers',
-  secondaryLengthUnit: 'meters',
-  primaryAreaUnit: 'hectares',
-  secondaryAreaUnit: 'sqmeters',
-  activeColor: '#db4a29',
-  completedColor: '#2c7bb6',
-  position: 'topleft'
-}).addTo(mapa);
+//L.control.measure({
+  //primaryLengthUnit: 'kilometers',
+  //secondaryLengthUnit: 'meters',
+  //primaryAreaUnit: 'hectares',
+  //secondaryAreaUnit: 'sqmeters',
+  //activeColor: '#db4a29',
+  //completedColor: '#2c7bb6',
+  //position: 'topleft'
+//}).addTo(mapa);
+
+const capaMapa1 = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+	maxZoom: 17,
+	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+});
+
+const capaMapa2 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+});
+
+const capaMapa3 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+});
+
+const capaMapa4 = L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+	maxZoom: 20,
+	attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+
+const miniaturas = document.querySelectorAll('.miniatura');
+
+miniaturas.forEach(miniatura => {
+  miniatura.addEventListener('click', () => {
+    const mapaElegido = miniatura.getAttribute('data-map');
+
+
+    mapa.removeLayer(capaMapa1);
+    mapa.removeLayer(capaMapa2);
+    mapa.removeLayer(capaMapa3);
+    mapa.removeLayer(capaMapa4);
+
+
+    if (mapaElegido === 'mapa1') mapa.addLayer(capaMapa1);
+    else if (mapaElegido === 'mapa2') mapa.addLayer(capaMapa2);
+    else if (mapaElegido === 'mapa3') mapa.addLayer(capaMapa3);
+    else if (mapaElegido === 'mapa4') mapa.addLayer(capaMapa4);
+    });
+});
+
+
+const centroInicial = [13.7, -88.9];
+const zoomInicial = 6;
+
+document.getElementById('btn-casita').addEventListener('click', () => {
+ mapa.setView(centroInicial, zoomInicial);
+});

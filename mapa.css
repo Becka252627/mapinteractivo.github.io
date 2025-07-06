@@ -128,3 +128,49 @@ img{
 .ocult {
   display: none;
 }
+
+.galeria-mapas {
+ display: flex;
+ gap: 10px;
+ padding: 10px;
+ background-color: #f4f4f4;
+ overflow-x: auto;
+ border-top: 2px solid #ccc;
+}
+
+.miniatura {
+ width: 100px;
+ height: 60px;
+ object-fit: cover;
+ cursor: pointer;
+ border: 2px solid transparent;
+ border-radius: 8px;
+ transition: border-color 0.3s;
+}
+
+.miniatura:hover {
+  border-color: #4caf50;
+}
+
+#btn-casita {
+ position: absolute;
+ top: 80px;
+ left: 8px;
+ z-index: 1000;
+ background-color: #ffffff;
+ border: 2px solid #388e3c;
+ border-radius: 50%;
+ padding: 10px;
+ cursor: pointer;
+ box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+ transition: transform 0.2s;
+}
+
+#btn-casita:hover {
+ transform: scale(1.1);
+}
+
+#btn-casita img {
+ width: 15px;
+ height: 15px;
+}
